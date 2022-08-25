@@ -30,9 +30,7 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.GameFragmentBinding
 
-/**
- * Fragment where the game is played
- */
+
 class GameFragment : Fragment() {
 
     private lateinit var binding: GameFragmentBinding
@@ -53,7 +51,7 @@ class GameFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
-        /** Setting up LiveData observation relationship **/
+      // setting live data observe
         viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
             binding.wordText.text = newWord
         })
@@ -75,7 +73,7 @@ class GameFragment : Fragment() {
     }
 
 
-    /** Methods for buttons presses **/
+   // button
 
     private fun onSkip() {
         viewModel.onSkip()
